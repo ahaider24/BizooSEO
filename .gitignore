@@ -1,0 +1,30 @@
+# Secrets
+.env
+*.env
+config/.env
+*_service_account.json
+*.pem
+*.key
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+.pytest_cache/
+
+# Node (templates / tooling)
+node_modules/
+.next/
+
+# OS / editor
+.DS_Store
+.vscode/
+.idea/
+
+# Logs & local data
+*.log
+logs/
+*.sqlite
+.cache/

@@ -1,0 +1,16 @@
+# Tracked competitor domains (PRD section 4)
+# Used by Agent 01 (keyword intersection) and Agent 12 (citation tracking)
+direct:
+  diligence_front:
+    - mosaic.pe
+  planning_front:
+    - runway.com
+tracked:
+  - causal.app
+  - visible.vc
+  - finmark.com
+  - cube.inc
+  - liveplan.com
+disambiguation_only:
+  # NOT a competitor; tracked so Agent 15 entity-linking resolves "Mosaic" correctly
+  - mosaic.tech
