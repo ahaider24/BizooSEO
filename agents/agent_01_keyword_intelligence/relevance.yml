@@ -1,0 +1,63 @@
+# Relevance weights for Agent 01 opportunity scoring (PRD section 6).
+# score = volume * (1 / competition) * weight
+# Buckets are checked top to bottom; first match wins. Patterns and terms are
+# lowercase substring matches against the keyword.
+
+exclude:
+  # PRD section 2 anti-goals: zero priority weight.
+  - pattern: "fp&a"
+  - pattern: "fpa software"
+  # Runway-brand queries are anti-goals EXCEPT the displacement intents
+  # (Plan pillar family 4, e.g. "runway financial alternative").
+  - pattern: "runway financial"
+    unless: ["alternative", "vs", "versus", "competitor", "compare", "switch"]
+
+pillar:
+  # Weight 1.0: squarely inside the five query pillars (PRD 5.2).
+  weight: 1.0
+  terms:
+    - cash runway
+    - runway calculator
+    - months of runway
+    - burn rate
+    - burn multiple
+    - scenario planning
+    - what-if
+    - what if analysis
+    - driver-based
+    - driver based
+    - cac payback
+    - financial model
+    - due diligence
+    - diligence
+    - data room
+    - quality of earnings
+    - qoe
+    - lbo
+    - working capital
+    - cash flow forecast
+    # Family 4 commercial/displacement intent (PRD 5.2). "alternative" is safe
+    # here because candidate keywords come from competitor domains' own
+    # rankings, so they are finance-tool alternatives by construction.
+    - alternative
+    - planning software
+    - planning tool
+    - " vs "
+    - versus
+
+adjacent:
+  # Weight 0.6: founder-finance adjacency.
+  weight: 0.6
+  terms:
+    - financial planning
+    - financial forecast
+    - startup finance
+    - fundraising
+    - saas metrics
+    - unit economics
+    - budget template
+    - m&a
+    - valuation
+    - founder
+
+default_weight: 0.3
