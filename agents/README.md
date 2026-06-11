@@ -1,6 +1,6 @@
 # Agents
 
-One module per agent: `agent_NN_short_name/` with `main.py`, `README.md`, and any agent-local config. Full specs in PRD §6.
+One module per agent: `agent_NN_short_name/` with `main.py`, `README.md`, and any agent-local config. Full specs in PRD §6. Shared runtime (env loading, Airtable client, Slack, GSC auth) lives in [`common/`](common/README.md); `pip install -r requirements.txt` once at the repo root, then any agent runs standalone via `python main.py` (n8n orchestration comes later).
 
 | # | Agent | Phase | Cadence |
 |---|---|---|---|
